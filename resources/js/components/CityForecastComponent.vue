@@ -1,8 +1,7 @@
 <template>
-  <div>
     <label for="selectedCity">Select a city</label>
-    <select v-model="selectedCity" id="selectedCity" @change="fetchWeatherData" class="form-select form-select-md mt-3 mb-5">
-      <option v-for="city in cities" :key="city">{{ city }}</option>
+    <select id="selectedCity" @change="handleCityChange" class="form-select form-select-md mt-3 mb-5">
+      <option v-for="city in cities" :key="city" :value="city">{{ city }}</option>
     </select>
 
     <div class="table-responsive">
@@ -66,7 +65,6 @@
             <h3>An error ocurred while making the request, try chaging the city option</h3>
         </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -92,6 +90,10 @@
                 .catch(error => {
                     console.error(error);
                 });
+            },
+            handleCityChange(event) {
+                this.selectedCity = event.target.value;
+                this.fetchWeatherData();            
             }
         }
     };

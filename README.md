@@ -1,2 +1,3 @@
-- To get the command to start executing, you need to run:
-    php artisan schedule:work
+<h1>To run the project execute these commands</h1>
+<code>php artisan migration</code>
+<code>php artisan schedule:work</code>
