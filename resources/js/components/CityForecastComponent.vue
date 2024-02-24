@@ -5,7 +5,7 @@
     </select>
 
     <div class="table-responsive">
-        <table v-if="weatherData" class="table table-hover">
+        <table v-if="weatherData && weatherData.length > 0" class="table table-hover">
             <thead>
                 <tr>
                 <th>ID</th>
@@ -62,7 +62,7 @@
             </tbody>
         </table>
         <div v-else>
-            <h3>An error ocurred while making the request, try chaging the city option</h3>
+            <h3>No data available</h3>
         </div>
     </div>
 </template>
